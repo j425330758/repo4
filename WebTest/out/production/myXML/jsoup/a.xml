@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding="utf-8" ?>
+<!--<?xml-stylesheet type="text/css"  href="a.css" ?>-->
+<users>
+    <user number='1'>
+        <name id="2">zhangsan</name>
+        <age>23</age>
+        <gender>male</gender>
+    </user>
+    <user number='2'>
+        <name id="1">lisi</name>
+        <age>15</age>
+        <gender>female</gender>
+    </user>
+
+    <code>
+        <![CDATA[
+            if(a < b && a > c){}
+        ]]>
+
+    </code>
+
+</users>

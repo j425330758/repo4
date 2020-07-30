@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<xsd:schema xmlns="http://galaxy/school/student"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://galaxy/school/student"
+            elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:element name="student">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="stdName" type="xsd:string" maxOccurs="1"/>
+                <xsd:element name="age" type="xsd:int" maxOccurs="1"/>
+                <xsd:element name="address" type="addressType" maxOccurs="1"/>
+                <xsd:element name="courses" type="coursesListType"/>
+                <xsd:element name="nation">
+                    <!-- 枚举限制-->
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="CHINA"/>
+                            <xsd:enumeration value="INDIA"/>
+                            <xsd:enumeration value="USA"/>
+                            <xsd:enumeration value="BRITISH"/>
+                            <xsd:enumeration value="FRANCE"/>
+                            <xsd:enumeration value="GERMAN"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+            </xsd:sequence>
+
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- list数据组-->
+    <xsd:complexType name="coursesListType">
+        <xsd:group ref="courseGroup"/>
+    </xsd:complexType>
+
+    <!-- maxOccurs必须设置为unbounded，否则默认限制个数为1-->
+    <xsd:group name="courseGroup">
+        <xsd:sequence>
+            <xsd:element name="course" type="courseType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:group>
+
+    <!-- 枚举值限制-->
+    <xsd:simpleType name="courseType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="English"/>
+            <xsd:enumeration value="Chinese"/>
+            <xsd:enumeration value="Math"/>
+            <xsd:enumeration value="Phyisc"/>
+            <xsd:enumeration value="Artistic"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="addressType">
+        <xsd:sequence>
+            <xsd:element name="country" type="xsd:string"/>
+            <xsd:element name="city" type="xsd:string"/>
+            <xsd:element name="street" type="xsd:string"/>
+            <xsd:element name="building" type="xsd:string"/>
+            <xsd:element name="room" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding="utf-8" ?>
+<!DOCTYPE students SYSTEM "student.dtd">
+
+<!--<!DOCTYPE students[
+        <!ELEMENT students (student*)> &lt;!&ndash;定义元素students，其内容为1~N个student元素。&ndash;&gt;
+        <!ELEMENT student (name,age,sex)> &lt;!&ndash;定义元素student，内容依次为name、age、sex元素&ndash;&gt;
+        <!ELEMENT name (#PCDATA)> &lt;!&ndash;定义元素name，内容为文本&ndash;&gt;
+        <!ELEMENT age (#PCDATA)> &lt;!&ndash;定义元素age,内容为文本&ndash;&gt;
+        <!ELEMENT sex (#PCDATA)> &lt;!&ndash;定义元素sex,内容为文本&ndash;&gt;
+        <!ATTLIST student number ID #REQUIRED> &lt;!&ndash;定义id唯一且必须出现&ndash;&gt;
+        ]>-->
+
+
+<students>
+    <student number="s001">
+        <name>zhangsan</name>
+        <age>23</age>
+        <sex>male</sex>
+    </student>
+
+    <student number="s002">
+        <name>lisi</name>
+        <age>20</age>
+        <sex>female</sex>
+    </student>
+
+</students>

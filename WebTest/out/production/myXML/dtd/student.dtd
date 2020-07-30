@@ -1,0 +1,6 @@
+<!ELEMENT students (student*)> <!--定义元素students，其内容为1~N个student元素。-->
+        <!ELEMENT student (name,age,sex)> <!--定义元素student，内容依次为name、age、sex元素-->
+        <!ELEMENT name (#PCDATA)> <!--定义元素name，内容为文本-->
+        <!ELEMENT age (#PCDATA)> <!--定义元素age,内容为文本-->
+        <!ELEMENT sex (#PCDATA)> <!--定义元素sex,内容为文本-->
+<!ATTLIST student number ID #REQUIRED> <!--定义id唯一且必须出现-->
